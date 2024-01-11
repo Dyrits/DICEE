@@ -18,24 +18,19 @@ void main() {
 }
 
 class DicePage extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+    List<int> dices = [1, 1];
+
     return Center(
       child: Row(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Image.asset("assets/images/dice1.png"),
-            ),
+        children: List.generate(dices.length, (index) => Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Image.asset("assets/images/dice${dices[index]}.png"),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16),
-              child: Image.asset("assets/images/dice2.png"),
-            ),
-          ),
-        ],
+        )),
       ),
     );
   }

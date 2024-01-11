@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'dice.dart';
+
 void main() {
   return runApp(
     MaterialApp(
@@ -11,26 +13,20 @@ void main() {
             child: Text("Dicee", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
           ),
         ),
-        body: DicePage(),
+        body: const DicePage(),
       ),
     ),
   );
 }
 
 class DicePage extends StatelessWidget {
+  const DicePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<int> dices = [1, 1];
-
     return Center(
       child: Row(
-        children: List.generate(dices.length, (index) => Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Image.asset("assets/images/dice${dices[index]}.png"),
-          ),
-        )),
+        children: List.generate(2, (index) => const Expanded(child: Dice())),
       ),
     );
   }

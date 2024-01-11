@@ -6,8 +6,10 @@ void main() {
       home: Scaffold(
         backgroundColor: Colors.red,
         appBar: AppBar(
-          title: Text("Dicee"),
           backgroundColor: Colors.red,
+          title: const Center(
+            child: Text("Dicee", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
+          ),
         ),
         body: DicePage(),
       ),

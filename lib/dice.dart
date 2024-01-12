@@ -6,10 +6,10 @@ class Dice extends StatefulWidget {
   const Dice({super.key});
 
   @override
-  _DiceState createState() => _DiceState();
+  DiceState createState() => DiceState();
 }
 
-class _DiceState extends State<Dice> {
+class DiceState extends State<Dice> {
   Random random = Random();
   int number = 1;
 
@@ -31,6 +31,7 @@ class _DiceState extends State<Dice> {
         foregroundColor: Colors.red,
         backgroundColor: Colors.red,
         elevation: 0,
+        padding: const EdgeInsets.all(10)
       ),
       onPressed: roll,
       child: Image.asset("assets/images/dice$number.png"),
